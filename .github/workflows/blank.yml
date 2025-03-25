@@ -20,7 +20,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Use the latest stable Node.js version
+          node-version: '16'  # Use the latest stable Node.js version
  
       - name: Install Newman
         run: npm install -g newman
@@ -34,9 +34,9 @@ jobs:
           npm install -g newman-reporter-html
           newman run .github/workflows/blank.yml -r cli,html --reporter-html-export newman-report.html
  
-      # (Optional) Upload report as artifact
-      - name: Upload Newman Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: newman-report
-          path: newman-report.html
+      # # (Optional) Upload report as artifact
+      # - name: Upload Newman Report
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: newman-report
+      #     path: newman-report.html
