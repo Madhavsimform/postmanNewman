@@ -26,13 +26,13 @@ jobs:
         run: npm install -g newman
  
       - name: Run API Tests with Newman
-        run: newman run .github/workflows/blank.yml
- 
+        run: newman run LearningRESTFULservice.json
+
       # (Optional) If you want to generate an HTML report
       - name: Run API Tests with HTML Report
         run: |
           npm install -g newman-reporter-html
-          newman run .github/workflows/blank.yml -r cli,html --reporter-html-export newman-report.html
+          newman run LearningRESTFULservice.json -r cli,html --reporter-html-export newman-report.html
  
       # # (Optional) Upload report as artifact
       # - name: Upload Newman Report
