@@ -36,10 +36,11 @@ jobs:
  
       # (Optional) Upload report as artifact
       - name: Upload Newman Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # Updated to v4
         with:
-          name: newman-report
-          path: ./newman-report.html
+           name: newman-report
+           path: ./newman-report.html
+
       
       - name: Verify Report File Exists
         run: ls -l newman-report.html || echo "Report not found!"
