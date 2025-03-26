@@ -36,7 +36,7 @@ jobs:
  
       # (Optional) Upload report as artifact
       - name: Upload Newman Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: newman-report
           path: newman-report.html
