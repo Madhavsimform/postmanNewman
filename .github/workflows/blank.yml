@@ -34,12 +34,12 @@ jobs:
           npm install -g newman-reporter-html
           newman run LearningRESTFULservice.json -r cli,html --reporter-html-export newman-report.html
  
-      # # (Optional) Upload report as artifact
-      # - name: Upload Newman Report
-      #   uses: actions/upload-artifact@v3.1.2
-      #   with:
-      #     name: newman-report
-      #     path: newman-report.html
+      # (Optional) Upload report as artifact
+      - name: Upload Newman Report
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: newman-report
+          path: newman-report.html
       
       - name: Verify Report File Exists
         run: ls -l newman-report.html || echo "Report not found!"
